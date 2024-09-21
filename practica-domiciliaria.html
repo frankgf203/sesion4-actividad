@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <style>
+        @font-face {
+            font-family: ProtestG;
+            src: url("/fuente/ProtestGuerrilla-Regular.ttf");
+        }
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #presentacion{
+            border: 5px dashed salmon;
+            padding: 20px;
+            font-family: ProtestG;
+            font-size: 30px;
+        }
+        h1{
+            text-align: center;
+            font-size: 30px;
+        }
+        input {
+            padding: 10px;
+            width: 300px;
+            margin-right: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        button {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff1a1a;
+        }
+        .cierre{
+            text-align: center;
+            background-color: #ff1a1a;
+            color: #f0f0f0;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="presentacion">
+        <h1>Actividad domiciliaria</h1>
+    </div>
+    <h1>Lista de Tareas</h1>
+    <input type="text" id="nuevaTarea" placeholder="Escribe una tarea...">
+    <button onclick="agregarTarea()">Agregar Tarea</button>
+
+    <ul id="listaTareas"></ul>
+
+    <script>
+        function agregarTarea() {
+            const tareaInput = document.getElementById("nuevaTarea");
+            const tareaTexto = tareaInput.value.trim();
+
+            if (tareaTexto === "") {
+                alert("Por favor, escribe una tarea.");
+                return;
+            }
+
+            const lista = document.getElementById("listaTareas");
+            const nuevaTarea = document.createElement("li");
+
+            nuevaTarea.innerHTML = tareaTexto + ' <button onclick="eliminarTarea(this)">Eliminar</button>';
+            lista.appendChild(nuevaTarea);
+
+            // Limpiar el campo de texto
+            tareaInput.value = "";
+        }
+
+        function eliminarTarea(boton) {
+            const tarea = boton.parentNode;
+            tarea.parentNode.removeChild(tarea);
+        }
+    </script>
+    <div class="cierre">}
+        <h1>Taller de programación web I - Alejandro Valderrama Chumbes</h1>
+        <h2>IV CICLO - DSI</h2>
+    </div>
+</body>
+</html>

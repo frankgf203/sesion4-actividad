@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - selección por clase</title>
+</head>
+<body>
+    <p class="miClase">Los tres tristes tigres tragan trigo</p>
+    <p class="miClase">¡Feliz dia del programador! 12 de septiembre</p>
+
+    <div class="cajita">
+        <p>Este es un DIV con clase "cajita"</p>
+    </div>
+    <!--Aplicar los estilos a la clase cajita:
+        1.- Que tenga un borde de grosor 2px y color azul.
+        2.- Que el texto esta centrado, con tipo de letra Courier y resaltado.-->
+    <script>
+        let elementos = document.getElementsByClassName("miClase");
+        for(let i = 0; i < elementos.length; i++){
+            elementos[i].style.color="green";
+        }
+        let caja = document.getElementsByClassName("cajita");
+        for(let i = 0; i < caja.length; i++){
+            caja[i].style.border="2px solid blue";
+            caja[i].style.fontFamily ="Courier";
+            caja[i].style.textAlign = "center";
+            caja[i].style.backgroundColor = "Yellow";
+        }      
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Crear y añadir un elemento de texto</title>
+</head>
+<body>
+    <h1>Ejemplo de creación de Elementos</h1>
+    <button onclick="agregarParrafo()">Añadir parrafo</button>
+
+    <!--Crear un div con un texto cualquiera a traves de un metodo y funcion, 
+        aplicarle los estilos siguientes:
+        1.- El div debe tener un border 4px, solido y de color green.
+        2.- El ancho del div debe tener 400px.
+        3.- El texto debe estar alineado, centrado y de tipo de fuente Verdana.
+    -->
+
+        <div>
+            <h1>Practica</h1>
+            <button onclick="gererate()">generar texto</button>
+        </div>
+    <script>
+        function agregarParrafo(){
+            //Crear un nuevo elemento <p>.
+            let nuevoParrafo = document.createElement("p");
+            //Establecer el texto del parrafo.
+            nuevoParrafo.textContent = "Este en un nuevo párrafo";
+            //Añadir el parrafo al final de body.
+            document.body.appendChild(nuevoParrafo);
+        }
+        
+        function generate(){
+            let texto = document.createElement("p");
+            texto.style.border = "4px solid green";
+            texto.style.width = "400px";
+            texto.style.textAlign = "center";
+            texto.style.fontFamily = "Verdana";
+
+            texto.textContent = "lorem";
+            document.body.appendChild(texto);
+        }
+    </script>
+</body>
+</html>

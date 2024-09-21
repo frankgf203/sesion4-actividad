@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Seleccionar el Selector CSS</title>
+</head>
+<body>
+    <p class="miclase">Párrafo 1</p>
+    <p class="miclase">Párrafo 2</p>
+    <p class="miclase">Párrafo 3</p>
+    <script>
+        /*Seleccionar el primer elemento*/
+        let primerElemento = document.querySelector(".miclase");
+        primerElemento.style.color = "red";
+        primerElemento.style.fontFamily = "Verdana";
+
+        /*Seleccionar todos los elementos*/
+        let todosElementos = document.querySelectorAll(".miclase");
+        todosElementos.forEach(Elemento =>{
+            Elemento.style.fontFamily = "Arial";
+            Elemento.style.color = "blue";
+            }
+        )
+    </script>
+</body>
+</html>

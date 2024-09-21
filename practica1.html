@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Seleccionar por ID</title>
+</head>
+<body>
+    <div id="miElemento">
+        <p>Este es un div con Id miElemento</p>
+    </div>
+    <div id="cajita">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Ducimus molestiae id magni, natus facilis quis earum 
+            rovident explicabo? Nostrum illum fugiat blanditiis libero 
+            dolorem, numquam quibusdam harum illo doloribus quas. 
+            <span id="texto1">Perspiciatis tempore</span>. 
+            <span id="texto2">Rem sint soluta</span>.</p>
+    </div>
+
+    <!--Aplicar los estilos al div "cajita" desde JavaScript:
+        1.- Texto de color verde y la fuente Verdana
+        2.- Aplicar al texto "Perspiciatis tempore", cursiva y negrita.
+        3.- Aplicar al texto "Rem sint soluta", subrayado y resaltado.-->
+    <script>
+        let elemento = document.getElementById("miElemento");
+        elemento.style.color = "blue";
+        elemento.style.fontFamily = "Cambria";
+        elemento.style.fontSize = "20px";
+
+        let caja = document.getElementById("cajita");
+        caja.style.color = "green";
+        caja.style.fontFamily = "Verdana";
+
+        let textoa = document.getElementById("texto1");
+        textoa.style.fontStyle = "italic";
+        textoa.style.fontWeight = "bold";
+
+        let textob = document.getElementById("texto2");
+        textob.style.textDecoration = "underline";
+        textob.style.backgroundColor = "yellow";
+        textob.style.padding = "0.2em";
+    </script>
+</body>
+</html>
